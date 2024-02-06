@@ -1,0 +1,51 @@
+/* ----- ----- Añadimos estilos globales ----- ----- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Sixtyfour&display=swap');
+
+:root {
+  --light-green: #98f6a9;
+  --dark-green: #9bd3ae;
+  --light-yellow: #ffeebe;
+  --light-gray: #e2e3e7;
+  --blue: #4afde7;
+}
+
+/* ----- ----- Estilamos el main ----- ----- */
+
+.body > main > section {
+  background: var(--light-gray);
+}
+
+.body > main > section:nth-child(odd) {
+  background: var(--light-yellow);
+}
+
+/* ----- ----- Estilamos el apartado de los botones ----- ----- */
+
+.info {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.info a {
+  font-family: 'Sixtyfour';
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  transition: 0.3s all ease;
+  background: var(--light-green);
+}
+
+.info a:hover {
+  scale: 1.1;
+  background: var(--blue);
+}
