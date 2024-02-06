@@ -7,13 +7,14 @@
 
     <!-- Llamamos a la hoja de estilos localizado en /css/style.css -> contiene todos los estilos globales -->
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <main class="body">
       <!-- El header de la web, en la que se encontrarán todas las páginas importantes -->
-      <header>
-        <a href="/"><img src="" alt="Logo" /></a>
+      <header class="header">
+        <a href="/"><img src="/img/Imagen1.webp" alt="Logo" /></a>
 
         <ul>
           <li><a href="/aboutus/">Sobre nosotros</a></li>
@@ -26,8 +27,15 @@
       <main>
         <!-- La sección de los botones -->
         <section class="info">
-          <a href="/jugar/">Jugar</a>
-          <a href="/docs/">Documentación</a>
+          <div>
+            <a href="/jugar/">Jugar</a>
+            <a href="/logros/">Logros</a>
+            <a href="/docs/">Documentación</a>
+          </div>
+
+          <img
+            src="/img/Imagen2.webp"
+            alt="Imagen relacionada con Packet Tracer" />
         </section>
 
         <!-- Contenido relacionado, ¿Por que se ha creado la web? -->
@@ -41,7 +49,7 @@
       </main>
 
       <!-- El footer de la web, se encontrarán otros enlaces más secundarios, sin tanta importancia como los del header -->
-      <footer>
+      <footer class="footer">
         <div>
           <ul>
             <h3>Inicio</h3>
