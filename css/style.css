@@ -3,7 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Sixtyfour&display=swap');
 
 :root {
-  --text-color: #000;
+  --light-green: #98f6a9;
+  --dark-green: #9bd3ae;
+  --light-yellow: #ffeebe;
+  --light-gray: #e2e3e7;
+  --blue: #4afde7;
 }
 
 *,
@@ -37,8 +41,8 @@ a {
 
 /* ----- ----- Estilamos el header de la página web ----- ----- */
 
-header {
-  background-color: #0077a0;
+.header {
+  background-color: var(--dark-green);
   height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -47,59 +51,28 @@ header {
   font-size: 17px;
 }
 
-/* Cambiar esto en un futuro */
-/* ----- ----- TODO ----- ----- */
-/* Separar en diferences archivos .css, dependiendo de las necesidades de cada página */
-
-.info {
-  min-height: 90vh;
-  background: rgb(11, 36, 0);
-  background: linear-gradient(
-    330deg,
-    rgba(11, 36, 0, 1) 0%,
-    rgba(191, 255, 0, 1) 100%
-  );
-}
-
-h2 {
-  font-family: 'Sixtyfour';
-}
-
-ul {
+.header > ul {
   display: flex;
-  gap: 15px;
+  flex-direction: row;
+  gap: 0 20px;
 }
 
-ul li {
-  position: relative;
+.header img {
+  height: 10%;
+  width: 10%;
 }
 
-ul li:after {
-  position: absolute;
-  content: '';
-  height: 2px;
-  width: 0;
-  background: #09f;
-  left: 50%;
-  bottom: 1px;
-  transition: 0.3s all ease;
+/* ----- ----- Estilamos el footer de la página web ----- ----- */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: var(--light-green);
+  padding: 20px 50px;
 }
 
-ul li:hover:after {
-  width: 100%;
-  left: 0;
-}
-
-.now {
-  color: #f90;
-}
-
-.now:after {
-  position: absolute;
-  content: '';
-  height: 2px;
-  width: 100%;
-  background: #09f;
-  left: 0;
-  bottom: 1px;
+.footer > div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
