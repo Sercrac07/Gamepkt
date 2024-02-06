@@ -49,3 +49,88 @@
   scale: 1.1;
   background: var(--blue);
 }
+
+.info button {
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  font-family: 'Sixtyfour';
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  transition: 0.3s all ease;
+  text-align: start;
+  background: var(--light-green);
+}
+
+.info button:hover {
+  scale: 1.1;
+  background: var(--blue);
+}
+
+/* ----- ----- Estilamos el modal ----- ----- */
+
+#modal {
+  display: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+#modal.show {
+  color: #fff;
+  display: flex;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.4;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+#modal1 {
+  display: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+#modal1.show {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: absolute;
+  opacity: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+#modal1.show > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#modal1.show button {
+  width: 60px;
+  border: 0px solid #000;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#modal1.show .si:hover {
+  background: #f005;
+  box-shadow: 0 0 15px 2px #f00;
+  transition: all 0.3s ease-in-out;
+}
+#modal1.show .no:hover {
+  background: #00940055;
+  box-shadow: 0 0 15px 2px #009400;
+  transition: all 0.3s ease-in-out;
+}
