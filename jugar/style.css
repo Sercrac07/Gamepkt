@@ -1,0 +1,18 @@
+#map {
+  padding: 10px;
+  display: grid;
+  gap: 20px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+button {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  min-height: 200px;
+}
+
+.ready {
+  border: 1px solid #09f;
+  box-shadow: 0 0 10px #000;
+}
