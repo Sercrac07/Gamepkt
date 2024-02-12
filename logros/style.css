@@ -1,6 +1,41 @@
-hr {
-  border: 0;
-  background: #f00;
-  height: 10px;
-  border-radius: 180px;
+main > h1 {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+main {
+  padding: 80px 200px;
+  background: #09f;
+}
+
+#logros {
+  display: flex;
+  flex-direction: column;
+}
+
+#logros > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background: #90f;
+}
+
+#logros > li:first-child {
+  border-radius: 18px 18px 0 0;
+}
+
+#logros > li:last-child {
+  border-radius: 0 0 18px 18px;
+}
+
+#logros > li:nth-child(even) {
+  background: #9f0;
+}
+
+#logros > li > div {
+  position: absolute;
+  background: #000;
+  left: 200px;
+  height: 108px;
 }

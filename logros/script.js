@@ -6,7 +6,8 @@ if (!logrosStorage) {
   localStorage.setItem(
     'logros',
     `[
-      { "name": "Consigue 10 estrellas.", "value": 0, "maxValue": 10, "completed": false },
+      { "name": "Consigue 10 estrellas.", "value": 3, "maxValue": 10, "completed": false },
+      { "name": "Consigue 10 estrellas.", "value": 2, "maxValue": 10, "completed": false },
       { "name": "Consigue 15 estrellas.", "value": 0, "maxValue": 15, "completed": false }
     ]`
   );
@@ -16,8 +17,10 @@ if (!logrosStorage) {
 
 const logrosUser = JSON.parse(logrosStorage);
 
-logrosUser.forEach((logro, index) => {
-  $logros.innerHTML += `<div><h1>${logro.name}</h1></div><hr style="width: ${
+logrosUser.forEach(logro => {
+  $logros.innerHTML += `<li><div style="width: ${
     (logro.value / logro.maxValue) * 100
-  }%" />`;
+  }%;"></div><h1>${logro.name}</h1><span>${logro.value} / ${
+    logro.maxValue
+  }</span></li>`;
 });
