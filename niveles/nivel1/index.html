@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nivel 1</title>
+    <title>Nivel 1 | Conexión entre pares</title>
 
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
-    <header>
-      <h1>Titulo</h1>
-      <button>Nivel 1</button>
-    </header>
+    <main>
+      <header class="title">
+        <h1>Conexión entre pares</h1>
+        <span id="button">Nivel 1</span>
+      </header>
+
+      <footer class="mats">Materiales</footer>
+    </main>
+
+    <section class="map"></section>
+
+    <aside class="mision show">
+      <ul id="mis">
+        <button id="verify">Verificar nivel</button>
+      </ul>
+      <h3 id="mision"><</h3>
+    </aside>
+
+    <div id="menu">
+      <ul>
+        <li id="resume">Continuar</li>
+        <li><a href="/">Menu</a></li>
+        <li><a href="/niveles/">Niveles</a></li>
+        <li><button onclick="localStorage.clear()">Niveles</button></li>
+      </ul>
+    </div>
+
+    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
