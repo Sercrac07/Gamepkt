@@ -14,67 +14,83 @@
     <main class="body">
       <!-- El header de la web, en la que se encontrarán todas las páginas importantes -->
       <header class="header">
-        <a href="/"><img src="/img/Imagen1.webp" alt="Logo" /></a>
+        <a href="/"><img src="/img/03.png" alt="Logo" /></a>
 
         <ul>
           <li><a href="/equipo/">Equipo</a></li>
           <li><a href="/docs/">Documentación </a></li>
+          <li><a href="/docs/">Logros </a></li>
         </ul>
       </header>
 
-      <!-- El elemento principal de la web, en esta se encuentra toda la información importante que se debe de mostrar -->
-      <main>
-        <!-- La sección de los botones -->
-        <section class="info">
-          <div>
-            <a href="/niveles/">Jugar</a>
-            <a href="/logros/">Logros</a>
-            <a href="/docs/">Documentación</a>
-            <button id="resetData">Eliminar datos</button>
-          </div>
-
-          <img
-            src="/img/Imagen2.webp"
-            alt="Imagen relacionada con Packet Tracer" />
-        </section>
+        <!-- El elemento principal de la web, en esta se encuentra toda la información importante que se debe de mostrar -->
+        <main>
+          <!-- La sección de los botones -->
+          <section class="info">
+            <img
+              src="/img/03.png"
+              alt="Imagen relacionada con Packet Tracer" />
+              <div class="container">
+                <a href="/niveles/" class="stack" style="--stacks: 3;">
+                  <span style="--index: 0;">JUGAR</span>
+                  <span style="--index: 1;">JUGAR</span>
+                  <span style="--index: 2;">JUGAR</span>
+              </div>
+              <video autoplay muted loop class="video-background">
+                <source src="/vid/Test.mp4" type="video/mp4">
+              <!-- </div>
+                <button id="resetData">Eliminar datos</button>
+              </div> -->
+          </section>
 
         <!-- Contenido relacionado, ¿Por que se ha creado la web? -->
         <section class="content">
           <h2>¿Por qué Game.pkt?</h2>
-          <article>
-            Crear un artículo del motivo por el cual se ha creado el juego, y
-            explicarlo
-          </article>
+          <p>
+            Somos un grupo de estudiantes, al cual se nos ha propuesto realizar
+            un videojuego. Este videojuego tenía que tener la temática del
+            programa llamado Packet Tracer, que es un programa en el que se
+            pueden simular todo tipo de redes, hemos decidido que tenga un
+            sistema de niveles en referencia al espacio, es decir que vas llendo
+            por los distintos niveles o planetas resolviendo problemas y
+            consiguiendo logros. El juego de llama GamePkt, porque los archivos
+            de packet Tracer son archivos .pkt, y de ahí viene el nombre de
+            nuestro videojuego.
+          </p>
         </section>
       </main>
 
       <!-- El footer de la web, se encontrarán otros enlaces más secundarios, sin tanta importancia como los del header -->
-      <footer class="footer">
-        <div>
+        <!-- El footer de la web, se encontrarán otros enlaces más secundarios, sin tanta importancia como los del header -->
+        <footer class="footer">
           <ul>
-            <h3>Inicio</h3>
-            <li class="now"><a href="/">Menu</a></li>
-            <li><a href="/aboutus/">Sobre nosotros</a></li>
-            <li><a href="/team/">Equipo</a></li>
-            <li><a href="/docs/">Documentación</a></li>
+            <li class="content-foo">
+              <a href="#"><h2>Inicio</h2></a>
+            </li>
+            <li class="content-foo">
+              <a href="/"><h2>Menu</h2></a>
+            </li>
+            <li class="content-foo">
+              <a href="/aboutus/"><h2>Sobre nosotros</h2></a>
+            </li>
+            <li class="content-foo">
+              <a href="/team/"><h2>Equipo</h2></a>
+            </li>
+            <li class="content-foo">
+              <a href="/docs/"><h2>Documentación</h2></a>
+            </li>
           </ul>
-
-          <ul>
-            <h3>Apartado2</h3>
-            <li><a href="#">Ejemplo1</a></li>
-          </ul>
-        </div>
-
-        <div>Derechos de autor</div>
-      </footer>
+        </footer>
+      </main>
     </main>
 
-    <div id="modal"></div>
-    <div id="modal1">
-      <h2>¿Estás seguro que desea eliminar el progreso?</h2>
+    <div id="modal">
       <div>
-        <button class="si" id="but1">Sí</button>
-        <button class="no" id="but2">No</button>
+        <h2>¿Estás seguro que desea eliminar el progreso?</h2>
+        <div>
+          <button class="si" id="but1">Sí</button>
+          <button class="no" id="but2">No</button>
+        </div>
       </div>
     </div>
 
