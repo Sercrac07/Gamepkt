@@ -8,13 +8,14 @@ main {
 }
 
 .title {
-  border-bottom: 1px solid #000;
+  color: hsl(145, 41%, 21%);
+  border: 2px solid hsl(145, 51%, 42%);
   padding: 0 50px;
   grid-area: title;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #eee;
+  background: hsl(145, 65%, 52%);
 }
 
 .title span {
@@ -22,9 +23,10 @@ main {
 }
 
 .mision {
+  color: hsl(145, 41%, 21%);
   left: 0;
-  border: 1px solid #000;
-  background: #bbb;
+  border: 2px solid hsl(145, 51%, 42%);
+  background: hsla(145, 65%, 52%, 0.788);
   padding: 10px;
   position: absolute;
   height: 60vh;
@@ -53,10 +55,10 @@ main {
 
 .mision > h3 {
   position: absolute;
-  border-right: 1px solid #000;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  background: #bbb;
+  border-right: 2px solid hsl(145, 51%, 42%);
+  border-top: 2px solid hsl(145, 51%, 42%);
+  border-bottom: 2px solid hsl(145, 51%, 42%);
+  background: hsla(145, 65%, 52%, 0.788);
   left: 100%;
   padding: 6px 12px;
 }
@@ -74,9 +76,20 @@ main {
 }
 
 .mats {
-  border-top: 1px solid #000;
+  color: hsl(145, 41%, 21%);
+  border: 2px solid hsl(145, 51%, 42%);
   grid-area: mats;
-  background: #aaa;
+  background: hsla(145, 65%, 52%, 0.788);
+}
+
+.Materiales {
+  margin-left: 10px;
+}
+
+.buttonverify {
+  border: solid 1px #000;
+  background-color: rgb(98, 238, 191);
+  color: hsla(145, 50%, 23%, 0.788);
 }
 
 #menu {

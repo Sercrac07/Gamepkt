@@ -1,10 +1,8 @@
-/* ----- ----- Añadimos estilos globales ----- ----- */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Sixtyfour&display=swap');
 
 :root {
-  --light-green: #98f6a9;
-  --dark-green: #9bd3ae;
+  --light-green: #5c57a8;
+  --dark-green: #5c57a8;
   --light-yellow: #ffeebe;
   --light-gray: #e2e3e7;
   --blue: #4afde7;
@@ -17,8 +15,9 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: 'Poppins';
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   text-decoration: none;
+  border: 0;
 }
 
 html {
@@ -30,20 +29,16 @@ a {
   color: inherit;
 }
 
-/* ----- ----- Estilamos el cuerpo de la página web ----- ----- */
-
-.body {
+body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
 }
 
-/* ----- ----- Estilamos el header de la página web ----- ----- */
-
 .header {
   background-color: var(--dark-green);
-  height: 10vh;
+  height: 15vh;
   display: flex;
   justify-content: space-between;
   padding: 20px 50px;
@@ -62,7 +57,9 @@ a {
   height: auto;
 }
 
-/* ----- ----- Estilamos el footer de la página web ----- ----- */
+main {
+  min-height: 85vh;
+}
 
 .footer {
   display: flex;
@@ -71,26 +68,20 @@ a {
   padding: 20px 50px;
 }
 
-.content{
-  margin-left: 40px;
-}
-
 .footer > div:nth-child(1) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.content-foo{
+.content-foo {
   margin: auto;
   border-radius: 25px;
   padding: 10px;
   text-align: center;
 }
 
-/* ----- ----- Media Query ----- ----- */
-
-@media screen and (max-width:800px){
+@media screen and (max-width: 800px) {
   .body {
     display: flex;
     flex-direction: column;
@@ -118,10 +109,9 @@ a {
     flex-direction: column;
     width: 360px;
     height: 300px;
-    
   }
 
-  .content-foo{
+  .content-foo {
     text-align: center;
   }
 }

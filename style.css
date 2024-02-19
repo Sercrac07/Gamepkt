@@ -3,156 +3,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Sixtyfour&display=swap');
 
 :root {
-  --light-green: #98f6a9;
-  --dark-green: #9bd3ae;
-  --light-yellow: #ffeebe;
-  --light-gray: #e2e3e7;
-  --blue: #4afde7;
+  /* ----- ----- BG Colors  ----- ----- */
+  --fondo: #000000;
+  --botons: #6200ff;
+  --b2tons: #ff0000;
+  --article: #000000;
+  /* ----- ----- Text Colors  ----- ----- */
+  --botonsT: #ffffff;
+  --articleT: #ffffff;
 }
 
 /* ----- ----- Estilamos el main ----- ----- */
 
 .video-background {
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  cursor:default;
+  cursor: default;
   opacity: 50%;
 }
 
 .body > main > section:nth-child(odd) {
-  background: var(--light-yellow);
+  background: var(--fondo);
 }
 /* ----- ----- Logo----- ----- */
 
-.info>img{
+.info > img {
   z-index: 1;
 }
 
 /* ----- ----- Estilamos el apartado de los botones ----- ----- */
 
-.info{
+.info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; 
-  overflow: hidden; 
-  min-height: 88vh;
+  position: relative;
+  overflow: hidden;
+  min-height: 85vh;
 }
 
 .info > div {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px 0;
+  z-index: 1;
 }
 
 .info a {
-  margin-top: 4rem;
-  border: 1px solid #000;
-  border-radius: 10px;
-  background: var(  --light-green);
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.container {
-  z-index: 1 
-}
-.container {
-  color: var(--light-yellow);
-  font-size: 0.8rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.info a:hover {
-  scale: 1.1;
-  background: var(--blue);
-}
-
-.info button {
-  font-weight: bold;
-  cursor: pointer;
-  color: #000;
   font-family: 'Sixtyfour';
-  font-size: 16px;
   padding: 10px 20px;
   border: 1px solid #000;
   border-radius: 10px;
   transition: 0.3s all ease;
-  text-align: start;
-  background: var(--light-green);
+  background: var(--botons);
+  color: var(--botonsT);
+  margin-top: 2em;
 }
 
-.info button:hover {
+.info a:hover {
   scale: 1.1;
-  background: var(--blue);
-}
-
-.info img {
-  height: 70vh;
-  width: 70vh;
+  background: var(--b2tons);
 }
 
 /* ----- ----- Animation "Jugar" Bottom ----- ----- */
-.stack {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-.stack span {
-  grid-row-start: 1;
-  grid-column-start: 1;
-  font-size: 2rem;
-  --stack-height: calc(100% / var(--stacks) - 1px);
-  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
-  --clip-top: calc(var(--stack-height) * var(--index));
-  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
-  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
-  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
-}
 
-.stack span:nth-child(odd) { --glitch-translate: 8px; }
-.stack span:nth-child(even) { --glitch-translate: -8px; }
-
-@keyframes stack {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%);
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-  };
-  60% {
-    opacity: 0.5;
-    transform: translateX(50%);
-  }
-  80% {
-    transform: none;
-    opacity: 1;
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-  }
-  100% {
-    text-shadow: none;
-  }
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-    transform: translate(var(--glitch-translate));
-  }
-  2% {
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-  }
-  4%, 100% {  text-shadow: none; transform: none; }
-}
 /* ----- ----- Estilamos el "porque Game.pkt" ----- ----- */
 
 .content {
-  color: floralwhite;
-  background: var(--blue);
-  text-align: center; /* Centra el contenido dentro de la sección */
+  color: var(--articleT);
+  background: var(--article);
+  text-align: center;
 }
 
 .content h2 {
@@ -160,9 +85,9 @@
 }
 
 .content article {
-margin: 1em 10em 1em 10em;
-line-height: 1.6;
-text-align: justify;
+  margin: 1em 10em 1em 10em;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 /* ----- ----- Estilamos el modal ----- ----- */
@@ -229,7 +154,7 @@ text-align: justify;
 }
 
 /* ----- ----- Media Query ----- ----- */
-@media screen and (max-width:800px){
+@media screen and (max-width: 800px) {
   .info {
     min-height: 90vh;
     display: flex;
@@ -238,12 +163,12 @@ text-align: justify;
     align-items: center;
   }
 
-  .info img{
+  .info img {
     height: 100px;
     width: 100px;
   }
 
-  .botones{
+  .botones {
     width: 240px;
     font-weight: 10px;
   }
