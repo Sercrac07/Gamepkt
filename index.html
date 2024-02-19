@@ -3,86 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game.pkt</title>
+    <title>Inicio | Game.pkt</title>
 
-    <!-- Llamamos a la hoja de estilos localizado en /css/style.css -> contiene todos los estilos globales -->
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <main class="body">
-      <!-- El header de la web, en la que se encontrarán todas las páginas importantes -->
-      <header class="header">
-        <a href="/"><img src="/img/03.png" alt="Logo" /></a>
+    <header class="header">
+      <a href="/"><img src="/assets/logo.webp" alt="Logo" /></a>
 
-        <ul>
-          <li><a href="/equipo/">Equipo</a></li>
-          <li><a href="/docs/">Documentación </a></li>
-          <li><a href="/docs/">Logros </a></li>
-        </ul>
-      </header>
+      <ul>
+        <li><a href="/equipo/">Equipo</a></li>
+        <li><a href="/docs/">Documentación</a></li>
+        <li><a href="/logros/">Logros</a></li>
+      </ul>
+    </header>
 
-        <!-- El elemento principal de la web, en esta se encuentra toda la información importante que se debe de mostrar -->
-        <main>
-          <!-- La sección de los botones -->
-          <section class="info">
-            <img
-              src="/img/03.png"
-              alt="Imagen relacionada con Packet Tracer" />
-              <div class="container">
-                <a href="/niveles/" class="stack" style="--stacks: 3;">
-                  <span style="--index: 0;">JUGAR</span>
-                  <span style="--index: 1;">JUGAR</span>
-                  <span style="--index: 2;">JUGAR</span>
-              </div>
-              <video autoplay muted loop class="video-background">
-                <source src="/vid/Test.mp4" type="video/mp4">
-              <!-- </div>
-                <button id="resetData">Eliminar datos</button>
-              </div> -->
-          </section>
+    <main>
+      <section class="info">
+        <img src="/img/03.png" alt="Imagen relacionada con Packet Tracer" />
+        <div>
+          <a href="/mapa/">Jugar</a>
+        </div>
 
-        <!-- Contenido relacionado, ¿Por que se ha creado la web? -->
-        <section class="content">
-          <h2>¿Por qué Game.pkt?</h2>
-          <p>
-            Somos un grupo de estudiantes, al cual se nos ha propuesto realizar
-            un videojuego. Este videojuego tenía que tener la temática del
-            programa llamado Packet Tracer, que es un programa en el que se
-            pueden simular todo tipo de redes, hemos decidido que tenga un
-            sistema de niveles en referencia al espacio, es decir que vas llendo
-            por los distintos niveles o planetas resolviendo problemas y
-            consiguiendo logros. El juego de llama GamePkt, porque los archivos
-            de packet Tracer son archivos .pkt, y de ahí viene el nombre de
-            nuestro videojuego.
-          </p>
-        </section>
-      </main>
+        <video autoplay muted loop class="video-background">
+          <source src="/assets/background.mp4" type="video/mp4" />
+        </video>
+      </section>
 
-      <!-- El footer de la web, se encontrarán otros enlaces más secundarios, sin tanta importancia como los del header -->
-        <!-- El footer de la web, se encontrarán otros enlaces más secundarios, sin tanta importancia como los del header -->
-        <footer class="footer">
-          <ul>
-            <li class="content-foo">
-              <a href="#"><h2>Inicio</h2></a>
-            </li>
-            <li class="content-foo">
-              <a href="/"><h2>Menu</h2></a>
-            </li>
-            <li class="content-foo">
-              <a href="/aboutus/"><h2>Sobre nosotros</h2></a>
-            </li>
-            <li class="content-foo">
-              <a href="/team/"><h2>Equipo</h2></a>
-            </li>
-            <li class="content-foo">
-              <a href="/docs/"><h2>Documentación</h2></a>
-            </li>
-          </ul>
-        </footer>
-      </main>
+      <section class="content">
+        <h2>¿Por qué Game.pkt?</h2>
+        <article>
+          Somos un grupo de estudiantes, al cual se nos ha propuesto realizar un
+          videojuego. Este videojuego tenía que tener la temática del programa
+          llamado Packet Tracer, que es un programa en el que se pueden simular
+          todo tipo de redes, hemos decidido que tenga un sistema de niveles en
+          referencia al espacio, es decir que vas llendo por los distintos
+          niveles o planetas resolviendo problemas y consiguiendo logros. El
+          juego de llama GamePkt, porque los archivos de packet Tracer son
+          archivos .pkt, y de ahí viene el nombre de nuestro videojuego.
+        </article>
+      </section>
     </main>
+
+    <footer class="footer">
+      <ul>
+        <li class="content-foo">
+          <a href="#"><h2>Inicio</h2></a>
+        </li>
+        <li class="content-foo">
+          <a href="/"><h2>Menu</h2></a>
+        </li>
+        <li class="content-foo">
+          <a href="/aboutus/"><h2>Sobre nosotros</h2></a>
+        </li>
+        <li class="content-foo">
+          <a href="/team/"><h2>Equipo</h2></a>
+        </li>
+        <li class="content-foo">
+          <a href="/docs/"><h2>Documentación</h2></a>
+        </li>
+      </ul>
+    </footer>
 
     <div id="modal">
       <div>
