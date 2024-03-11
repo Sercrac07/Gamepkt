@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nivel 1 | Conexión entre pares</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <header class="game-title">
+        <h1>Conexión entre pares</h1>
+        <h3 class="game-level">Nivel 1</h3>
+      </header>
+
+      <section id="game-map"></section>
+
+      <footer class="game-mats">
+        <ul id="materials"></ul>
+        <button id="verify-level">Verificar</button>
+      </footer>
+    </main>
+
+    <aside class="show" id="mission">
+      <ul id="missions">
+        <h1>Misiones</h1>
+      </ul>
+      <h3 id="display-mission"><</h3>
+    </aside>
+
+    <div class="options">
+      <a href="/">Menu</a>
+      <button id="return">Volver</button>
+    </div>
+
+    <div class="end">
+      <div class="done">
+        <h1>Enhorabuena!</h1>
+        <span>Has conseguido completar el nivel.</span>
+        <a href="/niveles/2/">Siguiente nivel</a>
+        <a href="/">Menu principal</a>
+      </div>
+
+      <div class="error">
+        <h1>No has conseguido superar el nivel</h1>
+        <span>Vuelve a intentarlo para poder acceder a los demás niveles</span>
+        <a href="/niveles/1/">Reintentar</a>
+        <a href="/">Menu principal</a>
+      </div>
+    </div>
+
+    <script type="module" src="../js/display.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
