@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="page-header">
       <a href="/"><img src="/assets/logo.webp" alt="Logo" /></a>
 
       <ul>
@@ -20,62 +20,31 @@
       </ul>
     </header>
 
-    <main>
-      <section class="info">
-        <img src="/img/03.png" alt="Imagen relacionada con Packet Tracer" />
-        <div>
+    <main class="page-main">
+      <section class="game">
+        <img src="/assets/packetTracer.webp" alt="Imagen relacionada con Packet Tracer" />
+        <div class="game-options">
           <a href="/mapa/">Jugar</a>
         </div>
-
-        <video autoplay muted loop class="video-background">
-          <source src="/assets/background.mp4" type="video/mp4" />
-        </video>
       </section>
 
       <section class="content">
         <h2>¿Por qué Game.pkt?</h2>
         <article>
-          Somos un grupo de estudiantes, al cual se nos ha propuesto realizar un
-          videojuego. Este videojuego tenía que tener la temática del programa
-          llamado Packet Tracer, que es un programa en el que se pueden simular
-          todo tipo de redes, hemos decidido que tenga un sistema de niveles en
-          referencia al espacio, es decir que vas llendo por los distintos
-          niveles o planetas resolviendo problemas y consiguiendo logros. El
-          juego de llama GamePkt, porque los archivos de packet Tracer son
+          Somos un <strong>grupo de estudiantes</strong>, al cual se nos ha propuesto realizar un <strong>videojuego</strong>. Este videojuego tenía que tener la temática del programa llamado
+          <strong>Packet Tracer</strong>, que es un programa en el que se pueden simular todo tipo de <strong>redes</strong>, hemos decidido que tenga un sistema de niveles en referencia al espacio,
+          es decir que vas llendo por los distintos niveles o planetas resolviendo problemas y consiguiendo logros. El juego de llama <strong>GamePkt</strong>, porque los archivos de packet Tracer son
           archivos .pkt, y de ahí viene el nombre de nuestro videojuego.
         </article>
       </section>
     </main>
 
-    <footer class="footer">
-      <ul>
-        <li class="content-foo">
-          <a href="#"><h2>Inicio</h2></a>
-        </li>
-        <li class="content-foo">
-          <a href="/"><h2>Menu</h2></a>
-        </li>
-        <li class="content-foo">
-          <a href="/aboutus/"><h2>Sobre nosotros</h2></a>
-        </li>
-        <li class="content-foo">
-          <a href="/team/"><h2>Equipo</h2></a>
-        </li>
-        <li class="content-foo">
-          <a href="/docs/"><h2>Documentación</h2></a>
-        </li>
-      </ul>
-    </footer>
-
-    <div id="modal">
-      <div>
-        <h2>¿Estás seguro que desea eliminar el progreso?</h2>
-        <div>
-          <button class="si" id="but1">Sí</button>
-          <button class="no" id="but2">No</button>
-        </div>
-      </div>
-    </div>
+    <ul class="page-footer">
+      <li><a href="/">Menu</a></li>
+      <li><a href="/aboutus/">Sobre nosotros</a></li>
+      <li><a href="/team/">Equipo</a></li>
+      <li><a href="/docs/">Documentación</a></li>
+    </ul>
 
     <script type="module" src="script.js"></script>
   </body>

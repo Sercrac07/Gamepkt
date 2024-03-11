@@ -1,18 +1,20 @@
-const $resetData = document.getElementById('resetData');
-const $modal = document.getElementById('modal');
-const $but1 = document.getElementById('but1');
-const $but2 = document.getElementById('but2');
+import { hasStorage, RESET_DATA_MESSAGE } from './js/index.js';
 
-$resetData.addEventListener('click', e => {
-  $modal.className.includes('show') ? '' : ($modal.className = 'show');
-});
+if (hasStorage()) {
+  const $opt = document.querySelector('.game-options');
 
-$but1.addEventListener('click', e => {
-  $modal.className = '';
+  $opt.innerHTML += '<button id="reset-data">Eliminar datos</button>';
 
-  localStorage.clear();
-});
+  const $reset = document.querySelector('#reset-data');
 
-$but2.addEventListener('click', e => {
-  $modal.className = '';
-});
+  const handleReset = () => {
+    const confirmation = confirm(RESET_DATA_MESSAGE);
+
+    if (confirmation) {
+      localStorage.clear();
+      $reset.remove();
+    }
+  };
+
+  $reset.addEventListener('click', handleReset);
+}
