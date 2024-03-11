@@ -1,175 +1,59 @@
-/* ----- ----- Añadimos estilos globales ----- ----- */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Sixtyfour&display=swap');
 
 :root {
-  /* ----- ----- BG Colors  ----- ----- */
-  --fondo: #000000;
-  --botons: #6200ff;
-  --b2tons: #ff0000;
-  --article: #000000;
-  /* ----- ----- Text Colors  ----- ----- */
-  --botonsT: #ffffff;
-  --articleT: #ffffff;
+  --eggshell: #faf3dd;
+  --tea-green: #c8d5b9;
+  --cambridge-blue: #8fc0a9;
+  --verdigris: #68b0ab;
+  --viridian: #4a7c59;
 }
 
-/* ----- ----- Estilamos el main ----- ----- */
-
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: default;
-  opacity: 50%;
+.page-main > section {
+  background: var(--tea-green);
 }
 
-.body > main > section:nth-child(odd) {
-  background: var(--fondo);
-}
-/* ----- ----- Logo----- ----- */
-
-.info > img {
-  z-index: 1;
+.page-main > section:nth-child(odd) {
+  background: var(--eggshell);
 }
 
-/* ----- ----- Estilamos el apartado de los botones ----- ----- */
-
-.info {
+.game {
+  min-height: 90vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
   align-items: center;
-  position: relative;
-  overflow: hidden;
-  min-height: 85vh;
 }
 
-.info > div {
+.game-options {
   display: flex;
   flex-direction: column;
-  gap: 10px 0;
-  z-index: 1;
+  gap: 12px;
 }
 
-.info a {
+.game-options a,
+.game-options button {
+  text-transform: uppercase;
   font-family: 'Sixtyfour';
-  padding: 10px 20px;
-  border: 1px solid #000;
-  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--cambridge-blue);
+  padding: 14px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 18px;
+  text-align: center;
   transition: 0.3s all ease;
-  background: var(--botons);
-  color: var(--botonsT);
-  margin-top: 2em;
 }
 
-.info a:hover {
+.game-options a:hover,
+.game-options button:hover {
   scale: 1.1;
-  background: var(--b2tons);
+  background: var(--cambridge-blue);
 }
-
-/* ----- ----- Animation "Jugar" Bottom ----- ----- */
-
-/* ----- ----- Estilamos el "porque Game.pkt" ----- ----- */
 
 .content {
-  color: var(--articleT);
-  background: var(--article);
-  text-align: center;
+  padding: 60px 350px;
 }
 
 .content h2 {
-  margin: 0.5em 10em 0.5em 10em;
-}
-
-.content article {
-  margin: 1em 10em 1em 10em;
-  line-height: 1.6;
-  text-align: justify;
-}
-
-/* ----- ----- Estilamos el modal ----- ----- */
-
-#modal {
-  display: none;
-  transition: all 0.3s ease;
-}
-
-#modal.show {
-  display: flex;
-  position: absolute;
-  background-color: #0007;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-}
-
-#modal > div {
-  display: none;
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-
-#modal > div {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  position: absolute;
-  opacity: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 40px;
-  background: #fff;
-  border-radius: 20px;
-  border: 1px solid black;
-}
-
-#modal > div > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-#modal > div button {
-  width: 60px;
-  border: 0px solid #000;
-  background: transparent;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#modal > div .si:hover {
-  background: #f005;
-  box-shadow: 0 0 15px 2px #f00;
-  transition: all 0.3s ease-in-out;
-}
-#modal > div .no:hover {
-  background: #00940055;
-  box-shadow: 0 0 15px 2px #009400;
-  transition: all 0.3s ease-in-out;
-}
-
-/* ----- ----- Media Query ----- ----- */
-@media screen and (max-width: 800px) {
-  .info {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .info img {
-    height: 100px;
-    width: 100px;
-  }
-
-  .botones {
-    width: 240px;
-    font-weight: 10px;
-  }
+  margin-bottom: 30px;
 }
