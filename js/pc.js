@@ -17,3 +17,8 @@ export function handlePcDrag(img, level) {
 
   img.addEventListener('dragstart', listener);
 }
+
+/**
+ *
+ */
+export function handlePcOpen() {}

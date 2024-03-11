@@ -123,6 +123,10 @@ export function handleLevel(level, verification) {
       if (name === 'pc') {
         handlePcDrag($img, level);
       }
+    } else if (type === 'element') {
+      if (name === 'pc') {
+        handlePcOpen();
+      }
     }
   });
 }
