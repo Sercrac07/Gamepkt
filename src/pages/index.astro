@@ -8,6 +8,24 @@ import Layout from '#l/Layout.astro';
       <img src='/assets/packetTracer.webp' alt='Imagen relacionada con Packet Tracer' />
       <div class='game-options'>
         <a href='/mapa'>Jugar</a>
+        <script is:inline data-script>
+          const selfScript = document.querySelector('script[data-script]');
+
+          if (localStorage.getItem('data')) {
+            const buttonStyle = "text-transform: uppercase; font-family: 'Sixtyfour'; cursor: pointer; border: 1px solid var(--cambridge-blue); padding: 14px 20px; font-weight: bold; font-size: 16px; border-radius: 18px; text-align: center; transition: 0.3s all ease; background: transparent;";
+
+            const hoverBgColor = getComputedStyle(document.documentElement).getPropertyValue('--cambridge-blue');
+
+            const resetData = () => {
+              if (confirm('¿Estás seguro que desea eliminar los datos de juego?')) {
+                localStorage.clear();
+                document.querySelector('button').remove();
+              }
+            };
+
+            selfScript.outerHTML = `<button style="${buttonStyle}" onmouseover="this.style.scale = '1.1'; this.style.background = '${hoverBgColor}'" onmouseout="this.style.scale = '1'; this.style.background = 'transparent'" onclick="if (confirm('¿Estás seguro que desea eliminar los datos de juego?')) { localStorage.clear(); document.querySelector('button').remove(); }">Eliminar datos de juego</button>`;
+          } else selfScript.outerHTML = '';
+        </script>
       </div>
     </section>
 
@@ -43,8 +61,7 @@ import Layout from '#l/Layout.astro';
     gap: 12px;
   }
 
-  .game-options a,
-  .game-options button {
+  .game-options a {
     text-transform: uppercase;
     font-family: 'Sixtyfour';
     cursor: pointer;
@@ -57,8 +74,7 @@ import Layout from '#l/Layout.astro';
     transition: 0.3s all ease;
   }
 
-  .game-options a:hover,
-  .game-options button:hover {
+  .game-options a:hover {
     scale: 1.1;
     background: var(--cambridge-blue);
   }
