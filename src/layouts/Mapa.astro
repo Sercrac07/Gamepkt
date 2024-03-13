@@ -14,20 +14,62 @@ const { level } = Astro.props;
     <meta charset='UTF-8' />
     <meta name='description' content=`Nivel ${level}` />
     <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/icono.svg' />
-    <title>Nivel {level} | Conexión entre pares</title>
+    <link rel='icon' type='image/svg+xml' href='/assets/icono.svg' />
+    <script is:inline type='module' data-level={level} data-script='1'>
+      import { getData } from '/public/js/data.js';
+
+      const selfScript = document.querySelector('script[data-level][data-script="1"]');
+      let level = 0;
+
+      level = selfScript.getAttribute('data-level');
+
+      const { levels } = getData();
+
+      selfScript.outerHTML = `<title>Nivel ${level} - ${levels[level].title}</title>`;
+    </script>
+    <title>Jugar a Game.pkt</title>
   </head>
 
   <body>
     <main>
-      <header class='game-title'>
-        <h1>Conexión entre pares</h1>
-        <h3 class='game-level'>Nivel 1</h3>
-      </header>
+      <script is:inline type='module' data-level={level} data-script='2'>
+        import { getData } from '/public/js/data.js';
+
+        const selfScript = document.querySelector('script[data-level][data-script="2"]');
+        let level = 0;
+
+        level = selfScript.getAttribute('data-level');
+
+        const { levels } = getData();
+
+        const headerStyle = 'padding: 0 50px; grid-area: title; display: flex; justify-content: space-between; align-items: center; background: var(--verdigris);';
+        const h3style = 'cursor: pointer;';
+
+        selfScript.outerHTML = `<header style='${headerStyle}'><h1>${levels[level].title}</h1><h3 style='${h3style}'>Nivel ${level}</h3></header>`;
+      </script>
 
       <section id='game-map'></section>
 
       <footer class='game-mats'>
+        <script is:inline type='module' data-level={level} data-script='3'>
+          import { getData } from '/public/js/data.js';
+
+          const selfScript = document.querySelector('script[data-level][data-script="3"]');
+          let level = 0;
+
+          level = selfScript.getAttribute('data-level');
+
+          const { levels } = getData();
+
+          const liStyle = 'list-style: none; height: auto; display: flex; flex-direction: row;';
+          const imgStyle = 'cursor: pointer; height: 100%;';
+          const spanStyle = '';
+
+          const html = levels[level].mats.map(mat => `<li style='${liStyle}'><img style='${imgStyle}' src='/assets/${mat.name}.webp' alt='${mat.name}' /><span style='${spanStyle}'></span></li>`).join('');
+
+          selfScript.outerHTML = html;
+        </script>
+
         <ul id='materials'></ul>
         <button id='verify-level'>Verificar</button>
       </footer>
@@ -36,33 +78,34 @@ const { level } = Astro.props;
     <aside class='show' id='mission'>
       <ul id='missions'>
         <h1>Misiones</h1>
+        <script is:inline type='module' data-level={level} data-script='4'>
+          import { getData } from '/public/js/data.js';
+
+          const selfScript = document.querySelector('script[data-level][data-script="4"]');
+          let level = 0;
+
+          level = selfScript.getAttribute('data-level');
+
+          const { levels } = getData();
+
+          const html = levels[level].missions.map(mission => `<li>${mission}</li>`).join('');
+
+          selfScript.outerHTML = html;
+        </script>
       </ul>
       <h3 id='display-mission'>{'<'}</h3>
     </aside>
 
-    <div class='options'>
-      <a href='/'>Menu</a>
-      <button id='return'>Volver</button>
-    </div>
+    <script is:inline type='module' data-level={level} data-script='5'>
+      import { handleLevel } from '/public/js/level.js';
 
-    <div class='end'>
-      <div class='done'>
-        <h1>Enhorabuena!</h1>
-        <span>Has conseguido completar el nivel.</span>
-        <a href='/niveles/2/'>Siguiente nivel</a>
-        <a href='/'>Menu principal</a>
-      </div>
+      const selfScript = document.querySelector('script[data-level][data-script="5"]');
+      let level = 0;
 
-      <div class='error'>
-        <h1>No has conseguido superar el nivel</h1>
-        <span>Vuelve a intentarlo para poder acceder a los demás niveles</span>
-        <a href='/niveles/1/'>Reintentar</a>
-        <a href='/'>Menu principal</a>
-      </div>
-    </div>
+      level = selfScript.getAttribute('data-level');
 
-    <script type='module' src='../js/display.js'></script>
-    <script type='module' src='script.js'></script>
+      handleLevel(level);
+    </script>
   </body>
 </html>
 
@@ -102,23 +145,6 @@ const { level } = Astro.props;
       'mats mats mats' 10vh / 1fr;
     min-height: 100vh;
     overflow: hidden;
-  }
-
-  .game-title {
-    padding: 0 50px;
-    grid-area: title;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--verdigris);
-  }
-
-  .game-title span {
-    cursor: pointer;
-  }
-
-  .game-level {
-    cursor: pointer;
   }
 
   #mission {
@@ -174,10 +200,6 @@ const { level } = Astro.props;
     align-items: center;
   }
 
-  img {
-    cursor: pointer;
-  }
-
   .game-mats {
     grid-area: mats;
     background: var(--verdigris);
@@ -186,76 +208,7 @@ const { level } = Astro.props;
     justify-content: space-between;
   }
 
-  #materials {
-    list-style: none;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-  }
-
-  #materials img {
-    height: 100%;
-  }
-
   .game-mats button {
     width: 5%;
-  }
-
-  .options {
-    position: absolute;
-    width: 100vw;
-    min-height: 100vh;
-    top: -100vh;
-    transition: 0.4s all ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #0003;
-    gap: 20px;
-  }
-
-  .options a,
-  .options button {
-    background: transparent;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 1px solid #000;
-  }
-
-  .options.show {
-    top: 0;
-  }
-
-  .end {
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #0003;
-    width: 100%;
-  }
-
-  .end.show {
-    display: flex;
-  }
-
-  .done,
-  .error {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .done.show,
-  .error.show {
-    display: flex;
   }
 </style>
