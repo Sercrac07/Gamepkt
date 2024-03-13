@@ -1,0 +1,11 @@
+---
+import Mapa from '#l/Mapa.astro';
+
+const levels = new Array(12).fill(0).map((_, i) => i + 1);
+
+const { nivel } = Astro.params;
+const level = levels.find(lev => lev === Number(nivel));
+if (!level) return Astro.redirect('/mapa');
+---
+
+<Mapa level={nivel} />

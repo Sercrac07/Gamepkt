@@ -1,0 +1,73 @@
+---
+import Layout from '#l/Layout.astro';
+---
+
+<Layout title='Game.pkg | Inicio' description='Bienvenidos a Game.pkt, un juego basado en la aplicación de simulación de redes "Packet Tracer". Game.pkt permite que los usuarios aprendan lo básico sobre la configuración de redes sobre los equipos tecnológicos'>
+  <main>
+    <section class='game'>
+      <img src='/assets/packetTracer.webp' alt='Imagen relacionada con Packet Tracer' />
+      <div class='game-options'>
+        <a href='/mapa'>Jugar</a>
+      </div>
+    </section>
+
+    <section class='content'>
+      <h2>¿Por qué Game.pkt?</h2>
+      <article>
+        Somos un <strong>grupo de estudiantes</strong>, al cual se nos ha propuesto realizar un <strong>videojuego</strong>. Este videojuego tenía que tener la temática del programa llamado <strong>Packet Tracer</strong>, que es un programa en el que se pueden simular todo tipo de <strong>redes</strong>, hemos decidido que tenga un sistema de niveles en referencia al espacio, es decir que vas llendo por los distintos niveles o planetas resolviendo problemas y consiguiendo logros. El juego de llama <strong>GamePkt</strong>, porque los archivos de packet Tracer son archivos .pkt, y de ahí viene el nombre de nuestro videojuego.
+      </article>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  section {
+    background: var(--tea-green);
+  }
+
+  section:nth-child(odd) {
+    background: var(--eggshell);
+  }
+
+  .game {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .game-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .game-options a,
+  .game-options button {
+    text-transform: uppercase;
+    font-family: 'Sixtyfour';
+    cursor: pointer;
+    border: 1px solid var(--cambridge-blue);
+    padding: 14px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s all ease;
+  }
+
+  .game-options a:hover,
+  .game-options button:hover {
+    scale: 1.1;
+    background: var(--cambridge-blue);
+  }
+
+  .content {
+    padding: 60px 350px;
+  }
+
+  .content h2 {
+    margin-bottom: 30px;
+  }
+</style>
